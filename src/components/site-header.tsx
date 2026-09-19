@@ -14,23 +14,25 @@ import {
 } from "@/components/ui/sheet";
 import { navLinks, site } from "@/lib/site";
 
+const headerCtaClass =
+  "inline-flex h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground sm:h-12 sm:px-5";
+
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:py-4">
+      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:py-4">
         <a
           href="#top"
-          className="flex shrink-0 items-center gap-2.5 text-primary"
+          className="flex min-w-0 shrink items-center gap-3 text-primary"
         >
-          <BrandMark className="size-11 shrink-0 sm:size-12" />
-          <span>
-            <span className="block font-heading text-[0.95rem] leading-tight font-semibold tracking-wide uppercase sm:text-base">
-              <span className="block">Legacy</span>
-              <span className="hidden sm:block">Life Management</span>
+          <BrandMark className="size-16 shrink-0 sm:size-[4.75rem]" />
+          <span className="min-w-0">
+            <span className="block whitespace-nowrap font-heading text-sm leading-none font-semibold tracking-wide uppercase sm:text-base">
+              Legacy Life Management
             </span>
-            <span className="mt-1 hidden max-w-[11rem] text-[0.65rem] leading-snug tracking-[0.12em] text-muted-foreground uppercase lg:block">
+            <span className="mt-1.5 block whitespace-nowrap text-[0.65rem] leading-none tracking-[0.06em] text-muted-foreground uppercase sm:text-xs">
               {site.tagline}
             </span>
           </span>
@@ -52,17 +54,14 @@ export function SiteHeader() {
         </nav>
 
         <div className="flex items-center gap-2 sm:gap-3">
-          <a
-            href={site.phoneHref}
-            className="inline-flex h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground sm:h-12 sm:px-5"
-          >
+          <a href={site.phoneHref} className={headerCtaClass}>
             <Phone className="size-4" aria-hidden />
             <span className="hidden sm:inline">{site.phoneDisplay}</span>
             <span className="sm:hidden">Call</span>
           </a>
           <a
             href={site.emailHref}
-            className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium text-primary underline-offset-4 hover:underline xl:inline-flex"
+            className={headerCtaClass}
             title={site.email}
           >
             <Mail className="size-4" aria-hidden />
@@ -113,9 +112,10 @@ export function SiteHeader() {
             </a>
             <a
               href={site.emailHref}
-              className="text-center text-base font-medium underline underline-offset-4"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
             >
-              {site.email}
+              <Mail className="size-4" aria-hidden />
+              Email
             </a>
           </div>
         </SheetContent>

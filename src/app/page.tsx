@@ -107,14 +107,14 @@ export default function HomePage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md">
-            <div className="relative mx-auto aspect-square max-w-[22rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm sm:max-w-none">
+            <div className="relative mx-auto aspect-square w-full max-w-[15.5rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm sm:max-w-[16.5rem]">
               <Image
                 src="/bobbie-libbey.jpg"
                 alt="Bobbie Libbey, owner of Legacy Life Management"
                 fill
                 priority
-                className="object-cover object-[center_12%]"
-                sizes="(max-width: 768px) 20rem, 24rem"
+                className="object-cover object-[center_0%]"
+                sizes="(max-width: 768px) 15.5rem, 16.5rem"
               />
             </div>
             <aside className="absolute top-2 right-0 hidden w-36 rounded-md border border-border bg-card p-3 text-center shadow-sm sm:block">
