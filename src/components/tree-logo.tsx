@@ -2,25 +2,21 @@ export function TreeLogo({ className }: { className?: string }) {
   return (
     <svg
       viewBox="0 0 64 64"
-      fill="none"
+      fill="currentColor"
       aria-hidden="true"
       className={className}
     >
+      <path d="M32 18c-3.2-6.4-10.4-8.2-14.8-4.2-4.2 3.8-3.4 10.6.8 14.2-5.2.6-9.2 5.4-8.4 10.6.8 5.4 6 8.6 11.6 7.6 1.8 4.4 6.4 7.2 11.2 7.2h-.4c4.8 0 9.4-2.8 11.2-7.2 5.6 1 10.8-2.2 11.6-7.6.8-5.2-3.2-10-8.4-10.6 4.2-3.6 5-10.4.8-14.2C42.4 9.8 35.2 11.6 32 18Z" />
       <path
-        d="M32 8c-7.2 0-13 6-13 14.2 0 2.4.6 4.6 1.6 6.6C16.4 30 14 34.2 14 39c0 7.2 6.4 12 18 12s18-4.8 18-12c0-4.8-2.4-9-6.6-10.2 1-2 1.6-4.2 1.6-6.6C45 14 39.2 8 32 8Z"
+        d="M30 46.5c0 4.2-.6 8.8-2.4 12.5h8.8c-1.8-3.7-2.4-8.3-2.4-12.5"
         fill="currentColor"
       />
       <path
-        d="M29.5 48.5V58h5V48.5"
-        stroke="currentColor"
-        strokeWidth="3.2"
-        strokeLinecap="round"
-      />
-      <path
-        d="M22 26c3 1.4 6.4 2.2 10 2.2s7-.8 10-2.2M20 36c3.6 1.8 7.6 2.7 12 2.7s8.4-.9 12-2.7"
+        d="M24 28c5 2 8 3 8 3s3-1 8-3M22 36c6 2.4 10 3.2 10 3.2s4-.8 10-3.2"
+        fill="none"
         stroke="white"
-        strokeOpacity="0.28"
-        strokeWidth="1.6"
+        strokeOpacity="0.35"
+        strokeWidth="1.4"
         strokeLinecap="round"
       />
     </svg>

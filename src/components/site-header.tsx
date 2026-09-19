@@ -22,15 +22,15 @@ export function SiteHeader() {
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 sm:px-6 lg:py-4">
         <a
           href="#top"
-          className="flex min-w-0 items-center gap-2.5 text-primary"
+          className="flex shrink-0 items-center gap-2.5 text-primary"
         >
           <BrandMark className="size-11 shrink-0 sm:size-12" />
-          <span className="min-w-0">
-            <span className="block font-heading text-[1.05rem] leading-none font-semibold tracking-wide uppercase sm:text-lg">
-              Legacy
-              <span className="hidden sm:inline"> Life Management</span>
+          <span>
+            <span className="block font-heading text-[0.95rem] leading-tight font-semibold tracking-wide uppercase sm:text-base">
+              <span className="block">Legacy</span>
+              <span className="hidden sm:block">Life Management</span>
             </span>
-            <span className="mt-1 hidden text-[0.7rem] tracking-[0.14em] text-muted-foreground uppercase sm:block">
+            <span className="mt-1 hidden max-w-[11rem] text-[0.65rem] leading-snug tracking-[0.12em] text-muted-foreground uppercase lg:block">
               {site.tagline}
             </span>
           </span>
@@ -38,13 +38,13 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-5 xl:flex"
+          className="hidden items-center gap-4 whitespace-nowrap xl:flex"
         >
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="text-[0.95rem] font-medium text-foreground underline-offset-4 hover:underline"
+              className="text-sm font-medium text-foreground underline-offset-4 hover:underline"
             >
               {link.label}
             </a>
@@ -54,7 +54,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2 sm:gap-3">
           <a
             href={site.phoneHref}
-            className="inline-flex h-11 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground sm:h-12 sm:px-5 sm:text-base"
+            className="inline-flex h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground sm:h-12 sm:px-5"
           >
             <Phone className="size-4" aria-hidden />
             <span className="hidden sm:inline">{site.phoneDisplay}</span>
@@ -62,10 +62,11 @@ export function SiteHeader() {
           </a>
           <a
             href={site.emailHref}
-            className="hidden items-center gap-2 text-sm font-medium text-primary underline-offset-4 hover:underline lg:inline-flex"
+            className="hidden items-center gap-2 whitespace-nowrap text-sm font-medium text-primary underline-offset-4 hover:underline xl:inline-flex"
+            title={site.email}
           >
             <Mail className="size-4" aria-hidden />
-            <span className="max-w-[14rem] truncate">{site.email}</span>
+            <span>Email</span>
           </a>
           <Button
             type="button"
