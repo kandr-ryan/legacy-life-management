@@ -22,13 +22,22 @@ Open that URL, then use Call / Email, the section links, and the contact form (e
 - Phone: 812-598-5423
 - Email: legacylifemanagementllc@gmail.com
 
-The contact form validates on the server and logs the request. It does not send email until you connect a live inbox or Firebase.
+The contact form validates in the browser and logs the request. It does not send email until you connect a live inbox.
 
-## Firebase (later)
+## Live
 
-Config lives in `firebase.json`, `.firebaserc`, `apphosting.yaml`, and `src/lib/firebase.ts`. Copy `.env.example` to `.env.local` when you have a real project. The site runs without those keys.
+- Site: https://legacy-life-management.web.app
+- GitHub: https://github.com/kandr-ryan/legacy-life-management
+- Firebase project: `legacy-life-management`
 
-No authentication and no database.
+Deploy static Hosting after a production build:
+
+```bash
+npm run build
+npx firebase-tools deploy --only hosting --project legacy-life-management
+```
+
+No authentication and no database. Copy `.env.example` to `.env.local` only if you add Firebase client keys later.
 
 ## Stack
 

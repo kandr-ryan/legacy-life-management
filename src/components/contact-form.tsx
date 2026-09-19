@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { validateContactFields } from "@/lib/contact";
 import { site } from "@/lib/site";
 
 type FormStatus = "idle" | "submitting" | "success" | "error";
@@ -40,31 +41,22 @@ export function ContactForm() {
     setStatus("submitting");
     setError("");
 
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(fields),
-      });
-      const data = (await response.json()) as { ok?: boolean; error?: string };
-
-      if (!response.ok || !data.ok) {
-        setStatus("error");
-        setError(
-          data.error ??
-            "The note could not be sent. Please call or email Bobbie instead.",
-        );
-        return;
-      }
-
-      setStatus("success");
-      setFields(emptyFields);
-    } catch {
+    const result = validateContactFields(fields);
+    if (!result.ok) {
       setStatus("error");
-      setError(
-        "The note could not be sent. Please call or email Bobbie instead.",
-      );
+      setError(result.error);
+      return;
     }
+
+    // Static Hosting has no inbox yet — same as the previous /api/contact stub.
+    console.info("[contact request]", {
+      name: result.fields.name,
+      phone: result.fields.phone || null,
+      email: result.fields.email || null,
+      messageLength: result.fields.message.length,
+    });
+    setStatus("success");
+    setFields(emptyFields);
   }
 
   function statusPanel() {
