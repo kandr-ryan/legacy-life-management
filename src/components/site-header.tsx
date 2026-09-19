@@ -27,8 +27,9 @@ export function SiteHeader() {
         >
           <BrandMark className="size-10 shrink-0 text-primary" />
           <span className="min-w-0">
-            <span className="block truncate font-heading text-lg leading-tight font-semibold sm:text-xl">
-              {site.shortName}
+            <span className="block font-heading text-lg leading-tight font-semibold sm:text-xl">
+              <span className="sm:hidden">Legacy Life</span>
+              <span className="hidden sm:inline">{site.shortName}</span>
             </span>
             <span className="hidden text-sm text-muted-foreground sm:block">
               {site.tagline}
