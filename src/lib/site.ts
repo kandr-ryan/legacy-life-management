@@ -9,6 +9,7 @@ export const site = {
   email: "legacylifemanagementllc@gmail.com",
   emailHref: "mailto:legacylifemanagementllc@gmail.com",
   region: "Southern Indiana",
+  siteUrl: "https://legacy-life-management.web.app",
 } as const;
 
 export const navLinks = [

@@ -24,18 +24,42 @@ const sourceSerif = Source_Serif_4({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(site.siteUrl),
   title: {
     default: `${site.legalName} — ${site.tagline}`,
     template: `%s — ${site.shortName}`,
   },
   description:
     "Personal, practical support for older adults and families: appointments, senior-living moves, funeral-related coordination, special projects, and everyday logistics. Not a medical or home-health service. Bobbie Libbey, owner.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+    ],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
-    title: `${site.legalName} — ${site.tagline}`,
-    description:
-      "A trusted person to call when life becomes difficult to manage alone. Owner Bobbie Libbey.",
+    title: site.shortName,
+    description: site.tagline,
+    url: site.siteUrl,
+    siteName: site.shortName,
     type: "website",
     locale: "en_US",
+    images: [
+      {
+        url: `${site.siteUrl}/og-image.jpg`,
+        width: 1200,
+        height: 630,
+        alt: `${site.shortName} — ${site.tagline}`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: site.shortName,
+    description: site.tagline,
+    images: [`${site.siteUrl}/og-image.jpg`],
   },
 };
 
