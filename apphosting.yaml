@@ -1,0 +1,9 @@
+# Firebase App Hosting — placeholder until a live project is connected.
+runConfig:
+  minInstances: 0
+env:
+  - variable: NEXT_PUBLIC_FIREBASE_PROJECT_ID
+    value: legacy-life-management
+    availability:
+      - BUILD
+      - RUNTIME
