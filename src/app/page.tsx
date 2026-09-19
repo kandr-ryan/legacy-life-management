@@ -1,20 +1,16 @@
+import Image from "next/image";
 import {
   CalendarDays,
+  Check,
   FolderKanban,
-  HeartHandshake,
+  Heart,
   Home,
-  ListChecks,
+  Leaf,
+  Users,
 } from "lucide-react";
 
 import { ContactForm } from "@/components/contact-form";
-import { EmailCta } from "@/components/email-cta";
-import { PhoneCta } from "@/components/phone-cta";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { LeafMotif } from "@/components/leaf-motif";
 import {
   Card,
   CardContent,
@@ -22,179 +18,260 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
 import { site } from "@/lib/site";
 
-const waysIHelp = [
+const services = [
   {
-    title: "Important appointments",
-    body: "Accompanying someone to an appointment so they are not navigating it alone — notes, questions, and a calm presence.",
+    title: "Appointments & health-related organization",
+    body: "Be informed. Feel supported.",
     icon: CalendarDays,
   },
   {
-    title: "Moves to senior living",
-    body: "Coordinating the many details of a move so the family can stay focused on the person, not the checklist.",
+    title: "Moves & life transitions",
+    body: "Smoother transitions. Brighter tomorrows.",
     icon: Home,
   },
   {
-    title: "Funeral-related tasks",
-    body: "Helping a family organize funeral-related coordination when grief already fills the day.",
-    icon: HeartHandshake,
+    title: "Funeral & family project support",
+    body: "Compassionate help when it matters most.",
+    icon: Heart,
+  },
+  {
+    title: "Everyday life assistance",
+    body: "Practical help for daily living.",
+    icon: Users,
   },
   {
     title: "Special projects",
-    body: "Managing a defined project — vendors, schedules, follow-up — until it is actually finished.",
+    body: "Flexible support for your unique needs.",
     icon: FolderKanban,
   },
+] as const;
+
+const steps = [
   {
-    title: "Everyday logistics",
-    body: "Tackling the growing list of ordinary things that still have to get done.",
-    icon: ListChecks,
+    n: "1",
+    title: "Talk about your needs",
+    body: "We start with a conversation — what is on your plate, and who needs to feel supported.",
   },
+  {
+    n: "2",
+    title: "Create a plan that fits",
+    body: "I organize the details, the people, and the next steps so nothing important is left hanging.",
+  },
+  {
+    n: "3",
+    title: "I get to work for you",
+    body: "I coordinate, follow through, and stay in touch until the work is actually done.",
+  },
+] as const;
+
+const resources = [
+  "Planning checklist",
+  "Trusted local resources",
+  "Helpful articles",
+  "Frequently asked questions",
 ] as const;
 
 export default function HomePage() {
   return (
     <main id="main" className="flex-1">
-      <section
-        id="top"
-        className="relative overflow-hidden border-b border-border"
-      >
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,oklch(0.9_0.03_80)_0%,transparent_45%),linear-gradient(180deg,oklch(0.975_0.01_85),transparent)]"
-        />
-        <div className="relative mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-20 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:items-center">
+      <section id="top" className="relative overflow-hidden">
+        <LeafMotif className="pointer-events-none absolute -top-10 -left-8 w-56 text-sage-leaf sm:w-72 lg:w-80" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:py-20">
           <div>
-            <p className="text-base font-semibold tracking-wide text-brass uppercase">
-              {site.legalName}
+            <p className="text-sm font-semibold tracking-[0.18em] text-primary uppercase">
+              Practical support for a brighter tomorrow
             </p>
-            <h1 className="mt-3 max-w-3xl font-heading text-4xl leading-snug font-semibold text-ink sm:text-5xl sm:leading-snug">
-              You don’t have to do it all alone.
+            <h1 className="mt-4 max-w-xl font-heading text-5xl leading-[1.12] font-semibold text-ink sm:text-6xl">
+              Life’s details matter.
             </h1>
-            <p className="mt-5 max-w-2xl text-xl leading-relaxed text-foreground sm:text-2xl">
-              {site.tagline}
-            </p>
-            <p className="mt-6 max-w-2xl text-xl leading-relaxed">
-              I’m {site.owner}. I created Legacy Life Management so older adults
-              and their families have a trusted person to call when life becomes
-              difficult to manage alone.
+            <p className="mt-6 max-w-xl text-xl leading-relaxed">
+              Personal support, practical solutions, and peace of mind for older
+              adults and their families of {site.region}.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-              <PhoneCta />
-              <EmailCta />
+              <a
+                href="#contact"
+                className="inline-flex h-12 items-center justify-center rounded-full bg-primary px-6 text-base font-semibold text-primary-foreground"
+              >
+                Let’s talk →
+              </a>
+              <a
+                href="#services"
+                className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-6 text-base font-semibold text-foreground"
+              >
+                How I can help →
+              </a>
             </div>
-            <p className="mt-5 text-base text-muted-foreground">
-              {site.phoneDisplay} · {site.email}
-            </p>
           </div>
 
-          <aside className="rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-8">
-            <p className="font-heading text-2xl font-semibold text-primary">
-              I’m here to help.
+          <div className="relative mx-auto w-full max-w-md">
+            <div className="relative mx-auto aspect-square max-w-[22rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm sm:max-w-none">
+              <Image
+                src="/bobbie-libbey.jpg"
+                alt="Bobbie Libbey, owner of Legacy Life Management"
+                fill
+                priority
+                className="object-cover object-[center_12%]"
+                sizes="(max-width: 768px) 20rem, 24rem"
+              />
+            </div>
+            <aside className="absolute top-2 right-0 hidden w-36 rounded-md border border-border bg-card p-3 text-center shadow-sm sm:block">
+              <p className="font-heading text-sm leading-snug text-ink">
+                You don’t have to do it all alone.
+              </p>
+              <Leaf className="mx-auto mt-2 size-4 text-primary" aria-hidden />
+            </aside>
+            <p className="mt-5 text-center">
+              <span className="block font-heading text-xl font-semibold">
+                {site.owner}
+              </span>
+              <span className="block text-base text-muted-foreground">
+                {site.ownerRole}
+              </span>
+              <span className="block text-base text-muted-foreground">
+                {site.legalName}
+              </span>
             </p>
-            <p className="mt-4 text-lg leading-relaxed">
-              That might mean an appointment, a move to senior living,
-              funeral-related tasks, a special project, or the everyday list
-              that keeps growing.
-            </p>
-            <Separator className="my-6" />
-            <p className="text-lg leading-relaxed">
-              My goal is simple: to listen, organize, coordinate, and help get
-              things done — with dignity, respect, and kindness.
-            </p>
-          </aside>
+          </div>
         </div>
       </section>
 
-      <section id="how-i-help" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <p className="text-base font-semibold tracking-wide text-brass uppercase">
-          How I help
-        </p>
-        <h2 className="mt-2 max-w-3xl font-heading text-3xl font-semibold text-ink sm:text-4xl">
-          Practical support for complicated days
-        </h2>
-        <p className="mt-4 max-w-3xl text-xl leading-relaxed">
-          Throughout my career, the most meaningful work has been stepping into
-          a complicated situation, bringing organization to the details, and
-          helping people feel supported along the way.
-        </p>
-        <ul className="mt-10 grid gap-5 md:grid-cols-2">
-          {waysIHelp.map((item) => (
-            <li key={item.title}>
-              <Card className="h-full bg-card py-6 text-base ring-foreground/8">
-                <CardHeader className="gap-3">
-                  <div className="flex size-12 items-center justify-center rounded-xl bg-secondary text-primary">
-                    <item.icon className="size-6" aria-hidden />
-                  </div>
-                  <CardTitle className="font-heading text-2xl font-semibold">
-                    {item.title}
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription className="text-lg leading-relaxed text-foreground">
-                    {item.body}
-                  </CardDescription>
-                </CardContent>
-              </Card>
+      <section id="services" className="bg-sage">
+        <ul className="mx-auto grid max-w-6xl gap-8 px-4 py-12 sm:px-6 sm:py-14 md:grid-cols-2 lg:grid-cols-5 lg:gap-5">
+          {services.map((item) => (
+            <li key={item.title} className="text-center">
+              <div className="mx-auto flex size-14 items-center justify-center rounded-full bg-primary text-primary-foreground">
+                <item.icon className="size-6" aria-hidden />
+              </div>
+              <h2 className="mt-4 font-heading text-lg leading-snug font-semibold text-ink">
+                {item.title}
+              </h2>
+              <p className="mt-2 text-base text-muted-foreground">{item.body}</p>
             </li>
           ))}
         </ul>
       </section>
 
-      <section id="about" className="border-y border-border bg-card">
-        <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2">
-          <div>
-            <p className="text-base font-semibold tracking-wide text-brass uppercase">
-              About Bobbie
-            </p>
-            <h2 className="mt-2 font-heading text-3xl font-semibold text-ink sm:text-4xl">
-              {site.owner}, {site.ownerRole}
-            </h2>
-            <p className="mt-5 text-xl leading-relaxed">
-              My professional background spans operations, program coordination,
-              community engagement, event planning, and administrative support.
-            </p>
-            <p className="mt-4 text-xl leading-relaxed">
-              I’ve worked closely with families, community organizations,
-              nonprofit leaders, educators, volunteers, and other professionals
-              — often as the person responsible for keeping communication clear,
-              coordinating moving pieces, and making sure important details
-              don’t get overlooked.
-            </p>
-          </div>
-          <div className="space-y-5 text-xl leading-relaxed">
-            <p>
-              That experience is at the heart of Legacy Life Management. I
-              know how to coordinate schedules and logistics, communicate with
-              many different people, manage confidential information with
-              discretion, and keep complex projects moving forward.
-            </p>
-            <p>
-              In previous roles, I served as a liaison among clients, donors,
-              community partners, leadership, and the public, and coordinated
-              meetings, travel, events, communications, and follow-up. I’ve
-              also managed large community projects involving vendors,
-              sponsors, volunteers, organizations, and numerous logistical
-              details.
-            </p>
-            <p>
-              I bring those same skills to every client — but in a much more
-              personal way.
-            </p>
+      <section className="mx-auto grid max-w-6xl gap-10 px-4 py-14 sm:px-6 sm:py-16 lg:grid-cols-3">
+        <div id="about">
+          <h2 className="font-heading text-3xl font-semibold text-ink">
+            About Bobbie
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed">
+            Get to know the heart behind Legacy Life Management and my
+            commitment to serving older adults and their families.
+          </p>
+          <a
+            href="#about-bobbie"
+            className="mt-6 inline-flex h-11 items-center rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
+          >
+            Learn more →
+          </a>
+        </div>
+        <div id="how-it-works">
+          <h2 className="font-heading text-3xl font-semibold text-ink">
+            How it works
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed">
+            A simple process to get the support you need.
+          </p>
+          <ol className="mt-6 space-y-4">
+            {steps.map((step) => (
+              <li key={step.n} className="flex gap-3">
+                <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-semibold text-primary-foreground">
+                  {step.n}
+                </span>
+                <div>
+                  <p className="font-semibold">{step.title}</p>
+                  <p className="mt-1 text-base text-muted-foreground">
+                    {step.body}
+                  </p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+        <div id="resources">
+          <h2 className="font-heading text-3xl font-semibold text-ink">
+            Resources
+          </h2>
+          <p className="mt-4 text-lg leading-relaxed">
+            Helpful tools and information for you and your family.
+          </p>
+          <ul className="mt-6 space-y-3">
+            {resources.map((item) => (
+              <li key={item} className="flex items-start gap-2 text-lg">
+                <Check className="mt-1 size-5 shrink-0 text-primary" aria-hidden />
+                {item}
+              </li>
+            ))}
+          </ul>
+          <a
+            href="#questions"
+            className="mt-6 inline-flex h-11 items-center rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
+          >
+            View resources →
+          </a>
+        </div>
+      </section>
+
+      <section id="about-bobbie" className="border-y border-border bg-card">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
+          <p className="text-sm font-semibold tracking-[0.18em] text-primary uppercase">
+            The person you can call
+          </p>
+          <h2 className="mt-2 font-heading text-3xl font-semibold text-ink sm:text-4xl">
+            Hi, I’m {site.owner}.
+          </h2>
+          <div className="mt-6 grid gap-6 text-xl leading-relaxed lg:grid-cols-2">
+            <div className="space-y-4">
+              <p>
+                Throughout my career, I’ve found that some of the most
+                meaningful work happens when you can step into a complicated
+                situation, bring organization to the details, and help people
+                feel supported along the way.
+              </p>
+              <p>
+                My professional background spans operations, program
+                coordination, community engagement, event planning, and
+                administrative support. I’ve worked closely with families,
+                community organizations, nonprofit leaders, educators,
+                volunteers, and other professionals — often serving as the
+                person responsible for keeping communication clear, coordinating
+                moving pieces, and making sure important details don’t get
+                overlooked.
+              </p>
+              <p>That experience is at the heart of Legacy Life Management.</p>
+            </div>
+            <div className="space-y-4">
+              <p>
+                I created Legacy Life Management to provide older adults and
+                their families with a trusted person they can call when life
+                becomes difficult to manage alone. That might mean accompanying
+                someone to an important appointment, coordinating the details of
+                a move to senior living, helping a family organize
+                funeral-related tasks, managing a special project, or simply
+                tackling the growing list of everyday things that need to get
+                done.
+              </p>
+              <p>
+                My goal is simple: to listen, organize, coordinate, and help get
+                things done while treating every client with dignity, respect,
+                and kindness.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="not-medical" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-        <div className="rounded-2xl border-2 border-primary/20 bg-secondary/70 px-6 py-10 sm:px-10">
-          <p className="text-base font-semibold tracking-wide text-brass uppercase">
-            Please know
-          </p>
-          <h2 className="mt-2 font-heading text-3xl font-semibold text-ink sm:text-4xl">
+      <section id="not-medical" className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+        <div className="rounded-2xl bg-sage px-6 py-8 sm:px-10">
+          <h2 className="font-heading text-2xl font-semibold text-ink sm:text-3xl">
             This is not medical care or home health
           </h2>
-          <p className="mt-5 max-w-4xl text-xl leading-relaxed">
+          <p className="mt-4 max-w-4xl text-xl leading-relaxed">
             Legacy Life Management is not a medical or home-health service. It
             is personal, practical support for the moments when you or someone
             you love could simply use another capable person by your side.
@@ -202,59 +279,46 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="questions" className="border-t border-border bg-card">
-        <div className="mx-auto max-w-3xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="font-heading text-3xl font-semibold text-ink sm:text-4xl">
-            Common questions
-          </h2>
-          <Accordion className="mt-8">
-            <AccordionItem value="who">
-              <AccordionTrigger className="py-4 text-lg font-semibold">
-                Who do you work with?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg leading-relaxed text-foreground">
-                Older adults and their families — anyone who needs a trusted
-                person to organize details and stay beside them when life is
-                hard to manage alone.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="medical">
-              <AccordionTrigger className="py-4 text-lg font-semibold">
-                Do you provide nursing or home health?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg leading-relaxed text-foreground">
-                No. Legacy Life Management is not a medical or home-health
-                service. I offer personal, practical coordination and
-                companionship for logistics — not clinical care.
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem value="start">
-              <AccordionTrigger className="py-4 text-lg font-semibold">
-                How do we start?
-              </AccordionTrigger>
-              <AccordionContent className="text-lg leading-relaxed text-foreground">
-                Call or email Bobbie. Share what is on your plate. We will talk
-                through whether practical support is the right fit, then take
-                the next step together.
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion>
-        </div>
+      <section id="questions" className="mx-auto max-w-3xl px-4 py-10 sm:px-6">
+        <h2 className="font-heading text-3xl font-semibold text-ink">
+          Frequently asked questions
+        </h2>
+        <dl className="mt-8 space-y-6 text-lg">
+          <div>
+            <dt className="font-semibold">Who do you work with?</dt>
+            <dd className="mt-2 text-muted-foreground">
+              Older adults and their families in {site.region} — anyone who
+              needs a trusted person to organize details when life is hard to
+              manage alone.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-semibold">Do you provide nursing or home health?</dt>
+            <dd className="mt-2 text-muted-foreground">
+              No. I offer personal, practical coordination — not clinical care.
+            </dd>
+          </div>
+          <div>
+            <dt className="font-semibold">How do we start?</dt>
+            <dd className="mt-2 text-muted-foreground">
+              Call or email Bobbie. Share what is on your plate. We will talk
+              through whether practical support is the right fit.
+            </dd>
+          </div>
+        </dl>
       </section>
 
-      <section id="contact" className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
+      <section id="contact" className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
         <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
           <div>
-            <p className="text-base font-semibold tracking-wide text-brass uppercase">
-              Get in touch
+            <p className="text-sm font-semibold tracking-[0.18em] text-primary uppercase">
+              Let’s talk
             </p>
             <h2 className="mt-2 font-heading text-3xl font-semibold text-ink sm:text-4xl">
-              I’m here when you are ready
+              You don’t have to do it all alone.
             </h2>
-            <p className="mt-5 text-xl leading-relaxed">
-              You don’t have to do it all alone. I’m here to help.
-            </p>
-            <address className="mt-8 space-y-3 not-italic text-xl">
+            <p className="mt-5 text-xl leading-relaxed">I’m here to help.</p>
+            <address className="mt-8 space-y-2 not-italic text-xl">
               <p className="font-heading text-2xl font-semibold">{site.owner}</p>
               <p>
                 {site.ownerRole} | {site.legalName}
@@ -272,12 +336,10 @@ export default function HomePage() {
                   {site.email}
                 </a>
               </p>
-              <p className="text-lg text-muted-foreground">{site.tagline}</p>
+              <p className="text-lg text-muted-foreground">
+                Serving {site.region}. {site.tagline}
+              </p>
             </address>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <PhoneCta />
-              <EmailCta />
-            </div>
           </div>
           <Card className="bg-card py-6 ring-foreground/8">
             <CardHeader>

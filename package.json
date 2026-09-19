@@ -28,5 +28,14 @@
     "eslint-config-next": "16.3.5",
     "tailwindcss": "^4",
     "typescript": "^5"
-  }
+  },
+  "description": "Marketing website for **Legacy Life Management, LLC** — personal, practical support for older adults and families. Owner: **Bobbie Libbey**.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://origin.cursor.com/git/kandr/tmp-1cdd039dea7de949.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
