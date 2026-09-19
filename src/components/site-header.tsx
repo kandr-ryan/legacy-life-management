@@ -24,7 +24,7 @@ export function SiteHeader() {
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-sm">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:py-4">
         <a
-          href="#top"
+          href="/"
           className="flex min-w-0 shrink items-center gap-3 text-primary"
         >
           <BrandMark className="size-16 shrink-0 sm:size-[4.75rem]" />

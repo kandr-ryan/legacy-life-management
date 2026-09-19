@@ -107,7 +107,11 @@ export default function HomePage() {
           </div>
 
           <div className="relative mx-auto w-full max-w-md">
-            <div className="relative mx-auto aspect-square w-full max-w-[15.5rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm sm:max-w-[16.5rem]">
+            <a
+              href="/about"
+              className="relative mx-auto block aspect-square w-full max-w-[15.5rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm sm:max-w-[16.5rem]"
+              aria-label="About Bobbie"
+            >
               <Image
                 src="/bobbie-libbey.jpg"
                 alt="Bobbie Libbey, owner of Legacy Life Management"
@@ -116,7 +120,7 @@ export default function HomePage() {
                 className="object-cover object-[center_0%]"
                 sizes="(max-width: 768px) 15.5rem, 16.5rem"
               />
-            </div>
+            </a>
             <aside className="absolute top-2 right-0 hidden w-36 rounded-md border border-border bg-card p-3 text-center shadow-sm sm:block">
               <p className="font-heading text-sm leading-snug text-ink">
                 You don’t have to do it all alone.
@@ -124,15 +128,17 @@ export default function HomePage() {
               <Leaf className="mx-auto mt-2 size-4 text-primary" aria-hidden />
             </aside>
             <p className="mt-5 text-center">
-              <span className="block font-heading text-xl font-semibold">
-                {site.owner}
-              </span>
-              <span className="block text-base text-muted-foreground">
-                {site.ownerRole}
-              </span>
-              <span className="block text-base text-muted-foreground">
-                {site.legalName}
-              </span>
+              <a href="/about" className="hover:underline">
+                <span className="block font-heading text-xl font-semibold">
+                  {site.owner}
+                </span>
+                <span className="block text-base text-muted-foreground">
+                  {site.ownerRole}
+                </span>
+                <span className="block text-base text-muted-foreground">
+                  {site.legalName}
+                </span>
+              </a>
             </p>
           </div>
         </div>
@@ -164,7 +170,7 @@ export default function HomePage() {
             commitment to serving older adults and their families.
           </p>
           <a
-            href="#about-bobbie"
+            href="/about"
             className="mt-6 inline-flex h-11 items-center rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
           >
             Learn more →
