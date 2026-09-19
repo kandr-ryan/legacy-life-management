@@ -69,7 +69,7 @@ export default function HomePage() {
             <p className="text-base font-semibold tracking-wide text-brass uppercase">
               {site.legalName}
             </p>
-            <h1 className="mt-3 max-w-3xl font-heading text-4xl leading-tight font-semibold text-ink sm:text-5xl sm:leading-[1.15]">
+            <h1 className="mt-3 max-w-3xl font-heading text-4xl leading-snug font-semibold text-ink sm:text-5xl sm:leading-snug">
               You don’t have to do it all alone.
             </h1>
             <p className="mt-5 max-w-2xl text-xl leading-relaxed text-foreground sm:text-2xl">
