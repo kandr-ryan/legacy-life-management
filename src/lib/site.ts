@@ -15,9 +15,42 @@ export const site = {
 export const navLinks = [
   { href: "/#top", label: "Home" },
   { href: "/about", label: "About Bobbie" },
+  { href: "/about#faq", label: "Frequently Asked Questions" },
   { href: "/#services", label: "Services" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#contact", label: "Contact" },
+] as const;
+
+export const aboutFaq = [
+  {
+    question: "What kinds of things can Legacy Life Management help with?",
+    answer:
+      "Legacy Life Management provides personal, practical support for older adults and their families. Services may include accompanying clients to appointments, coordinating moves or life transitions, helping organize funeral- or family-related projects, communicating with vendors or family members, assisting with everyday tasks, and managing special projects. Each situation is different, so services are tailored to the individual client’s needs.",
+  },
+  {
+    question:
+      "Does Legacy Life Management provide medical, legal, or financial advice?",
+    answer:
+      "No. Legacy Life Management does not provide medical, legal, financial, or other licensed professional advice or services. I can help organize information, prepare questions, take notes, coordinate appointments, and assist with follow-up. When specialized assistance is needed, referrals to appropriate professionals can be provided for the client or family to consider and pursue at their own discretion.",
+  },
+  {
+    question:
+      "Can you communicate with doctors, facilities, family members, or other professionals on my behalf?",
+    answer:
+      "Yes, when appropriate and with the client’s permission. The client packet includes written authorization allowing Legacy Life Management to communicate with designated individuals or organizations for the specific services requested. Medical providers, financial institutions, attorneys, facilities, and other organizations may require their own authorization or release forms as well.",
+  },
+  {
+    question:
+      "Can clients give you gifts, money, or include you in financial arrangements?",
+    answer:
+      "No. Maintaining clear professional boundaries protects both the client and Legacy Life Management. The client packet includes a No-Gifts & Financial Boundaries Acknowledgment, which is signed as part of the client relationship. Legacy Life Management does not accept cash gifts, tips, gift cards, personal loans, valuable property, inheritances, beneficiary designations, or other significant financial benefits from clients. Payment for agreed-upon services and reimbursement of documented, pre-approved business expenses are not considered gifts.",
+  },
+  {
+    question:
+      "What happens when I contact Legacy Life Management for the first time?",
+    answer:
+      "We start with a conversation. You don’t need to know exactly what service you need before calling. We’ll talk about what is happening, what needs attention, and where an extra set of hands could make things easier. From there, we can determine whether Legacy Life Management is a good fit, discuss the scope of assistance, and create a plan for moving forward.",
+  },
 ] as const;
 
 export const personYouCanCall = [

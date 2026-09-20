@@ -2,9 +2,8 @@ import type { Metadata } from "next";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { BobbiePortrait } from "@/components/bobbie-portrait";
-import { BrandLockup } from "@/components/brand-mark";
 import { LeafMotif } from "@/components/leaf-motif";
-import { aboutStory, site } from "@/lib/site";
+import { aboutFaq, aboutStory, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Bobbie",
@@ -20,17 +19,17 @@ export default function AboutPage() {
 
       <article className="relative mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16 lg:py-20">
         <div className="flex flex-col items-center text-center">
-          <a href="/" className="flex flex-col items-center">
-            <BrandLockup className="h-auto w-56 object-contain sm:w-64" />
-          </a>
-
-          <div className="mt-10">
-            <BobbiePortrait priority />
-          </div>
+          <BobbiePortrait priority />
 
           <p className="mt-10 max-w-xs font-heading text-3xl leading-tight font-semibold text-ink sm:text-4xl">
             You don’t have to do it all alone.
           </p>
+          <a
+            href="#faq"
+            className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
+          >
+            Frequently Asked Questions
+          </a>
         </div>
 
         <div>
@@ -83,6 +82,24 @@ export default function AboutPage() {
           </div>
         </div>
       </article>
+
+      <section id="faq" className="section-center bg-sage">
+        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16">
+          <h2 className="font-heading text-3xl font-semibold text-ink sm:text-4xl">
+            Frequently Asked Questions
+          </h2>
+          <dl className="mt-10 space-y-8">
+            {aboutFaq.map((item) => (
+              <div key={item.question}>
+                <dt className="font-heading text-xl font-semibold text-ink">
+                  {item.question}
+                </dt>
+                <dd className="mt-3 text-lg leading-relaxed">{item.answer}</dd>
+              </div>
+            ))}
+          </dl>
+        </div>
+      </section>
     </main>
   );
 }

@@ -40,7 +40,7 @@ export function SiteHeader() {
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-4 whitespace-nowrap xl:flex"
+          className="hidden items-center gap-3 whitespace-nowrap 2xl:flex"
         >
           {navLinks.map((link) => (
             <a
@@ -71,7 +71,7 @@ export function SiteHeader() {
             type="button"
             variant="outline"
             size="icon-lg"
-            className="tap-target xl:hidden"
+            className="tap-target 2xl:hidden"
             aria-label="Open menu"
             onClick={() => setOpen(true)}
           >
