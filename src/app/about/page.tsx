@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLockup } from "@/components/brand-mark";
 import { LeafMotif } from "@/components/leaf-motif";
 import { aboutStory, site } from "@/lib/site";
 
@@ -20,15 +20,8 @@ export default function AboutPage() {
 
       <article className="relative mx-auto grid max-w-6xl gap-12 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.2fr)] lg:items-start lg:gap-16 lg:py-20">
         <div className="flex flex-col items-center text-center">
-          <a href="/" className="flex flex-col items-center text-primary">
-            <BrandMark className="size-24 sm:size-28" />
-            <span className="mt-4 font-heading text-xl font-semibold tracking-wide text-ink uppercase sm:text-2xl">
-              Legacy
-              <span className="block">Life Management</span>
-            </span>
-            <span className="mt-2 max-w-[14rem] text-[0.7rem] tracking-[0.14em] text-muted-foreground uppercase">
-              {site.tagline}
-            </span>
+          <a href="/" className="flex flex-col items-center">
+            <BrandLockup className="h-auto w-56 object-contain sm:w-64" />
           </a>
 
           <div className="relative mt-10 aspect-square w-full max-w-[17rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm">

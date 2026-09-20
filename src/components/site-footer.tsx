@@ -1,6 +1,6 @@
 import { Mail, MapPin, Phone } from "lucide-react";
 
-import { BrandMark } from "@/components/brand-mark";
+import { BrandLockup } from "@/components/brand-mark";
 import { navLinks, site } from "@/lib/site";
 
 export function SiteFooter() {
@@ -44,15 +44,12 @@ export function SiteFooter() {
       </div>
 
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
-        <div className="flex items-center gap-3">
-          <BrandMark className="size-10 text-primary-foreground" />
-          <div>
-            <p className="font-heading text-sm font-semibold tracking-wide uppercase">
-              {site.shortName}
-            </p>
-            <p className="text-sm text-primary-foreground/80">{site.tagline}</p>
-          </div>
-        </div>
+        <a
+          href="/"
+          className="inline-flex max-w-[14rem] items-center rounded-md bg-background p-2"
+        >
+          <BrandLockup className="h-16 w-auto object-contain" />
+        </a>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {navLinks.map((link) => (
             <a key={link.href} href={link.href} className="hover:underline">

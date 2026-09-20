@@ -27,7 +27,7 @@ export function SiteHeader() {
           href="/"
           className="flex min-w-0 shrink items-center gap-3 text-primary"
         >
-          <BrandMark className="size-16 shrink-0 sm:size-[4.75rem]" />
+          <BrandMark className="h-16 w-auto shrink-0 object-contain sm:h-[4.75rem]" />
           <span className="min-w-0">
             <span className="block whitespace-nowrap font-heading text-sm leading-none font-semibold tracking-wide uppercase sm:text-base">
               Legacy Life Management
