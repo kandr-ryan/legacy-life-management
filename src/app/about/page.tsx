@@ -3,7 +3,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import { BobbiePortrait } from "@/components/bobbie-portrait";
 import { LeafMotif } from "@/components/leaf-motif";
-import { aboutFaq, aboutStory, site } from "@/lib/site";
+import { aboutStory, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "About Bobbie",
@@ -25,7 +25,7 @@ export default function AboutPage() {
             You don’t have to do it all alone.
           </p>
           <a
-            href="#faq"
+            href="/faq"
             className="mt-6 inline-flex h-11 items-center justify-center rounded-full bg-primary px-5 text-base font-semibold text-primary-foreground"
           >
             Frequently Asked Questions
@@ -82,24 +82,6 @@ export default function AboutPage() {
           </div>
         </div>
       </article>
-
-      <section id="faq" className="section-center bg-sage">
-        <div className="mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16">
-          <h2 className="font-heading text-3xl font-semibold text-ink sm:text-4xl">
-            Frequently Asked Questions
-          </h2>
-          <dl className="mt-10 space-y-8">
-            {aboutFaq.map((item) => (
-              <div key={item.question}>
-                <dt className="font-heading text-xl font-semibold text-ink">
-                  {item.question}
-                </dt>
-                <dd className="mt-3 text-lg leading-relaxed">{item.answer}</dd>
-              </div>
-            ))}
-          </dl>
-        </div>
-      </section>
     </main>
   );
 }

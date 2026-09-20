@@ -15,7 +15,7 @@ export const site = {
 export const navLinks = [
   { href: "/#top", label: "Home" },
   { href: "/about", label: "About Bobbie" },
-  { href: "/about#faq", label: "Frequently Asked Questions" },
+  { href: "/faq", label: "Frequently Asked Questions" },
   { href: "/#services", label: "Services" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#contact", label: "Contact" },
