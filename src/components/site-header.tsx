@@ -15,32 +15,52 @@ import {
 import { navLinks, site } from "@/lib/site";
 
 const headerCtaClass =
-  "inline-flex h-11 shrink-0 items-center gap-2 whitespace-nowrap rounded-full bg-primary px-4 text-sm font-semibold text-primary-foreground sm:h-12 sm:px-5";
+  "inline-flex h-9 shrink-0 items-center gap-1.5 whitespace-nowrap rounded-full bg-primary px-3 text-xs font-semibold text-primary-foreground sm:h-10 sm:px-4 sm:text-sm";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="sticky top-0 z-40 border-b border-border/70 bg-background/95 backdrop-blur-sm">
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:gap-4 sm:px-6 lg:py-4">
-        <a
-          href="/"
-          className="flex min-w-0 shrink items-center gap-3 text-primary"
-        >
-          <BrandMark className="h-16 w-auto shrink-0 object-contain sm:h-[4.75rem]" />
-          <span className="min-w-0">
-            <span className="block whitespace-nowrap font-heading text-sm leading-none font-semibold tracking-wide uppercase sm:text-base">
-              Legacy Life Management
+      <div className="mx-auto flex max-w-6xl flex-col gap-3 px-4 py-3 sm:px-6 lg:py-3">
+        <div className="flex items-start justify-between gap-3">
+          <a href="/" className="flex min-w-0 flex-1 items-center gap-2.5 text-primary">
+            <BrandMark className="h-12 w-auto shrink-0 object-contain sm:h-14" />
+            <span className="min-w-0">
+              <span className="block font-heading text-sm leading-snug font-semibold tracking-wide uppercase sm:text-base">
+                Legacy Life Management
+              </span>
+              <span className="mt-1 block text-[0.65rem] leading-snug tracking-[0.06em] text-muted-foreground uppercase sm:text-xs">
+                {site.tagline}
+              </span>
             </span>
-            <span className="mt-1.5 block whitespace-nowrap text-[0.65rem] leading-none tracking-[0.06em] text-muted-foreground uppercase sm:text-xs">
-              {site.tagline}
-            </span>
-          </span>
-        </a>
+          </a>
+          <div className="flex shrink-0 items-center gap-2">
+            <a href={site.phoneHref} className={headerCtaClass}>
+              <Phone className="size-3.5" aria-hidden />
+              <span className="hidden sm:inline">{site.phoneDisplay}</span>
+              <span className="sm:hidden">Call</span>
+            </a>
+            <a href={site.emailHref} className={headerCtaClass} title={site.email}>
+              <Mail className="size-3.5" aria-hidden />
+              <span>Email</span>
+            </a>
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              className="tap-target xl:hidden"
+              aria-label="Open menu"
+              onClick={() => setOpen(true)}
+            >
+              <Menu className="size-5" />
+            </Button>
+          </div>
+        </div>
 
         <nav
           aria-label="Primary"
-          className="hidden items-center gap-3 whitespace-nowrap 2xl:flex"
+          className="hidden flex-wrap items-center gap-x-4 gap-y-2 xl:flex"
         >
           {navLinks.map((link) => (
             <a
@@ -52,32 +72,6 @@ export function SiteHeader() {
             </a>
           ))}
         </nav>
-
-        <div className="flex items-center gap-2 sm:gap-3">
-          <a href={site.phoneHref} className={headerCtaClass}>
-            <Phone className="size-4" aria-hidden />
-            <span className="hidden sm:inline">{site.phoneDisplay}</span>
-            <span className="sm:hidden">Call</span>
-          </a>
-          <a
-            href={site.emailHref}
-            className={headerCtaClass}
-            title={site.email}
-          >
-            <Mail className="size-4" aria-hidden />
-            <span>Email</span>
-          </a>
-          <Button
-            type="button"
-            variant="outline"
-            size="icon-lg"
-            className="tap-target 2xl:hidden"
-            aria-label="Open menu"
-            onClick={() => setOpen(true)}
-          >
-            <Menu className="size-5" />
-          </Button>
-        </div>
       </div>
 
       <Sheet open={open} onOpenChange={setOpen}>
