@@ -82,6 +82,7 @@
   --chart-4: oklch(0.32 0.035 150);
   --chart-5: oklch(0.24 0.02 145);
   --radius: 0.75rem;
+  --header-offset: 6.25rem;
   --sidebar: oklch(0.965 0.012 85);
   --sidebar-foreground: oklch(0.24 0.02 145);
   --sidebar-primary: oklch(0.32 0.035 150);
@@ -131,6 +132,7 @@
   html {
     @apply scroll-smooth font-sans;
     color-scheme: light;
+    scroll-padding-top: var(--header-offset);
   }
 
   body {
@@ -152,4 +154,9 @@
 @utility tap-target {
   min-height: 2.75rem;
   min-width: 2.75rem;
+}
+
+@utility section-center {
+  scroll-margin-top: max(var(--header-offset), calc(50dvh - 12rem));
+  scroll-margin-bottom: calc(50dvh - 12rem);
 }

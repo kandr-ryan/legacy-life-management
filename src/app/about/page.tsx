@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { Mail, MapPin, Phone } from "lucide-react";
 
+import { BobbiePortrait } from "@/components/bobbie-portrait";
 import { BrandLockup } from "@/components/brand-mark";
 import { LeafMotif } from "@/components/leaf-motif";
 import { aboutStory, site } from "@/lib/site";
@@ -24,15 +24,8 @@ export default function AboutPage() {
             <BrandLockup className="h-auto w-56 object-contain sm:w-64" />
           </a>
 
-          <div className="relative mt-10 aspect-square w-full max-w-[17rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm">
-            <Image
-              src="/bobbie-libbey.jpg"
-              alt="Bobbie Libbey, owner of Legacy Life Management"
-              fill
-              priority
-              className="object-cover object-[center_0%]"
-              sizes="17rem"
-            />
+          <div className="mt-10">
+            <BobbiePortrait priority />
           </div>
 
           <p className="mt-10 max-w-xs font-heading text-3xl leading-tight font-semibold text-ink sm:text-4xl">

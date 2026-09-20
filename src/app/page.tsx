@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
+import { BobbiePortrait } from "@/components/bobbie-portrait";
 import { ContactForm } from "@/components/contact-form";
 import { LeafMotif } from "@/components/leaf-motif";
 import {
@@ -66,7 +67,7 @@ const steps = [
 export default function HomePage() {
   return (
     <main id="main" className="flex-1">
-      <section id="top" className="relative overflow-hidden">
+      <section id="top" className="relative overflow-hidden bg-background">
         <LeafMotif className="pointer-events-none absolute -top-10 -left-8 w-56 text-sage-leaf sm:w-72 lg:w-80" />
         <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] lg:py-20">
           <div>
@@ -96,20 +97,9 @@ export default function HomePage() {
             </div>
           </div>
 
-          <div className="relative mx-auto w-full max-w-md">
-            <a
-              href="/about"
-              className="relative mx-auto block aspect-square w-full max-w-[15.5rem] overflow-hidden rounded-full bg-sage-leaf/30 shadow-sm sm:max-w-[16.5rem]"
-              aria-label="About Bobbie"
-            >
-              <Image
-                src="/bobbie-libbey.jpg"
-                alt="Bobbie Libbey, owner of Legacy Life Management"
-                fill
-                priority
-                className="object-cover object-[center_0%]"
-                sizes="(max-width: 768px) 15.5rem, 16.5rem"
-              />
+          <div className="relative mx-auto flex w-full max-w-md flex-col items-center">
+            <a href="/about" aria-label="About Bobbie">
+              <BobbiePortrait priority />
             </a>
             <p className="mt-5 text-center">
               <a href="/about" className="hover:underline">
@@ -128,7 +118,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="bg-background">
+      <section id="services" className="section-center bg-sage">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
           <p className="text-center text-sm font-semibold tracking-[0.18em] text-primary uppercase">
             How I can help
@@ -164,10 +154,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        id="about"
-        className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6 sm:py-16"
-      >
+      <section id="about" className="bg-background">
+        <div className="mx-auto max-w-3xl px-4 py-14 text-center sm:px-6 sm:py-16">
         <h2 className="font-heading text-3xl font-semibold text-ink">
           About Bobbie
         </h2>
@@ -181,9 +169,10 @@ export default function HomePage() {
         >
           Learn more →
         </a>
+        </div>
       </section>
 
-      <section id="how-it-works" className="border-y border-border bg-card">
+      <section id="how-it-works" className="section-center bg-sage">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-6 sm:py-16">
           <h2 className="text-center font-heading text-3xl font-semibold text-ink">
             How it works
@@ -234,8 +223,9 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-16">
-        <Card id="contact" className="scroll-mt-28 bg-card py-6 ring-foreground/8">
+      <section id="contact" className="section-center bg-sage">
+        <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-16">
+        <Card className="bg-card py-6 ring-foreground/8">
           <CardHeader>
             <CardTitle className="font-heading text-2xl font-semibold">
               Send a short note
@@ -249,6 +239,7 @@ export default function HomePage() {
             <ContactForm />
           </CardContent>
         </Card>
+        </div>
       </section>
     </main>
   );
