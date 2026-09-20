@@ -46,9 +46,9 @@ export function SiteFooter() {
       <div className="mx-auto flex max-w-6xl flex-col gap-6 px-4 py-8 sm:px-6 lg:flex-row lg:items-center lg:justify-between">
         <a
           href="/"
-          className="inline-flex max-w-[14rem] items-center rounded-md bg-background p-2"
+          className="inline-flex max-w-[18rem] items-center rounded-md bg-background px-3 py-2"
         >
-          <BrandLockup className="h-16 w-auto object-contain" />
+          <BrandLockup className="h-24 w-auto object-contain" />
         </a>
         <nav aria-label="Footer" className="flex flex-wrap gap-x-4 gap-y-2 text-sm">
           {navLinks.map((link) => (

@@ -128,30 +128,40 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="services" className="bg-sage">
-        <ul className="mx-auto grid max-w-6xl gap-6 px-4 py-12 sm:px-6 sm:py-14 md:grid-cols-2 lg:grid-cols-5">
-          {services.map((item) => (
-            <li key={item.title} className="overflow-hidden rounded-2xl bg-card text-center shadow-sm">
-              <div className="relative aspect-[16/10] w-full">
-                <Image
-                  src={item.image}
-                  alt={item.alt}
-                  fill
-                  className="object-cover"
-                  sizes="(max-width: 1024px) 50vw, 18vw"
-                />
-              </div>
-              <div className="px-4 py-5">
-                <h2 className="font-heading text-lg leading-snug font-semibold text-ink">
+      <section id="services" className="bg-background">
+        <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
+          <p className="text-center text-sm font-semibold tracking-[0.18em] text-primary uppercase">
+            How I can help
+          </p>
+          <h2 className="mt-2 text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
+            Practical support for real life
+          </h2>
+          <ul className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-5">
+            {services.map((item) => (
+              <li key={item.title} className="text-center">
+                <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
+                  <Image
+                    src={item.image}
+                    alt={item.alt}
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 50vw, 18vw"
+                  />
+                </div>
+                <h3 className="mt-5 font-heading text-lg leading-snug font-semibold text-ink">
                   {item.title}
-                </h2>
-                <p className="mx-auto mt-2 max-w-[16rem] text-base text-muted-foreground">
+                </h3>
+                <span
+                  className="mx-auto mt-3 block h-px w-10 bg-primary"
+                  aria-hidden
+                />
+                <p className="mx-auto mt-3 max-w-[16rem] text-base text-muted-foreground">
                   {item.body}
                 </p>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ul>
+        </div>
       </section>
 
       <section
