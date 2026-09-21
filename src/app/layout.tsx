@@ -33,11 +33,20 @@ export const metadata: Metadata = {
     "Personal, practical support for older adults and families: appointments, senior-living moves, funeral-related coordination, special projects, and everyday logistics. Not a medical or home-health service. Bobbie Libbey, owner.",
   icons: {
     icon: [
-      { url: "/favicon.ico" },
-      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-tree-20260921.ico", type: "image/x-icon" },
+      { url: "/favicon.ico?v=20260921", type: "image/x-icon" },
+      {
+        url: "/favicon-32x32-20260921.png",
+        sizes: "32x32",
+        type: "image/png",
+      },
+      {
+        url: "/favicon-16x16-20260921.png",
+        sizes: "16x16",
+        type: "image/png",
+      },
     ],
-    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+    apple: [{ url: "/apple-touch-icon-20260921.png", sizes: "180x180" }],
   },
   openGraph: {
     title: site.shortName,
