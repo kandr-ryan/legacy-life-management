@@ -22,6 +22,61 @@ export const navLinks = [
   { href: "/#contact", label: "Contact" },
 ] as const;
 
+export const ratesSheet = {
+  eyebrow: "You don’t have to do it all alone.",
+  title: "Service & Rate Information",
+  subtitle: "Practical support for a more organized, less stressful tomorrow",
+  hourly: {
+    heading: "Hourly rate",
+    items: [
+      "$20 per hour",
+      "Applies to local services within the immediate Evansville area only.",
+      "Time is billed in 1-hour increments.",
+    ],
+  },
+  largerProjects: {
+    heading: "Larger or out-of-town projects",
+    items: [
+      "Priced on a case-by-case basis.",
+      "Projects involving significant travel or extended planning will be quoted individually based on the scope of work, estimated time, and any travel requirements.",
+      "You will always receive clear information before any work begins.",
+    ],
+  },
+  expenses: {
+    heading: "Additional expenses",
+    items: [
+      "Any out-of-pocket expenses (mileage, parking, tolls, supplies, postage, etc.) will be billed at actual cost with a receipt provided.",
+      "Mileage, when applicable, is billed at the current IRS standard rate.",
+    ],
+  },
+  included: {
+    heading: "What’s included",
+    intro:
+      "My services provide practical, non-medical support tailored to your needs, such as:",
+    items: [
+      "Appointment assistance and companionship",
+      "Errands and shopping",
+      "Home organization and downsizing support",
+      "Communication and coordination",
+      "Project management",
+      "Advocacy and resource connection",
+    ],
+    close:
+      "And more — all designed to make daily life easier and help you focus on what matters most.",
+  },
+  notIncluded: {
+    heading: "What’s not included",
+    body: "I do not provide medical care, legal advice, or financial advising. When needed, I can help connect you with trusted professionals in those fields.",
+  },
+  commitment: {
+    heading: "Our commitment",
+    items: [
+      "You can count on clear communication, professional boundaries, and respectful, compassionate support.",
+      "My goal is to help you maintain independence, reduce stress, and enjoy a more organized, fulfilling life.",
+    ],
+  },
+} as const;
+
 export const aboutFaq = [
   {
     question: "What kinds of things can Legacy Life Management help with?",
