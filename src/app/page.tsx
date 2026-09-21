@@ -89,7 +89,7 @@ export default function HomePage() {
                 Let’s talk →
               </a>
               <a
-                href="#services"
+                href="/rates"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-6 text-base font-semibold text-foreground"
               >
                 How I can help →
@@ -223,8 +223,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section id="contact" className="section-center bg-sage">
-        <div className="mx-auto max-w-2xl px-4 py-14 sm:px-6 sm:py-16">
+      <section
+        id="contact"
+        className="flex min-h-[calc(100dvh-var(--header-offset))] scroll-mt-[var(--header-offset)] items-center bg-sage"
+      >
+        <div className="mx-auto w-full max-w-2xl px-4 py-14 sm:px-6 sm:py-16">
         <Card className="bg-card py-6 ring-foreground/8">
           <CardHeader>
             <CardTitle className="font-heading text-2xl font-semibold">

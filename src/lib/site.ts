@@ -16,6 +16,7 @@ export const navLinks = [
   { href: "/#top", label: "Home" },
   { href: "/about", label: "About Bobbie" },
   { href: "/faq", label: "Frequently Asked Questions" },
+  { href: "/rates", label: "Rates and fees" },
   { href: "/#services", label: "Services" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#contact", label: "Contact" },
