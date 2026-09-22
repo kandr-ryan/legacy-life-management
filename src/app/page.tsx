@@ -11,40 +11,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { personYouCanCall, site } from "@/lib/site";
-
-const services = [
-  {
-    title: "Appointments & health-related organization",
-    body: "Be informed. Feel supported.",
-    image: "/service-appointments.webp",
-    alt: "Stethoscope on a clipboard",
-  },
-  {
-    title: "Moves & transitions",
-    body: "Helping life’s changes feel more manageable.",
-    image: "/service-moves.webp",
-    alt: "Moving boxes labeled Next Chapter",
-  },
-  {
-    title: "Funeral & family project support",
-    body: "Compassionate help when it matters most.",
-    image: "/service-funeral.webp",
-    alt: "White lily on a dark surface",
-  },
-  {
-    title: "Everyday life assistance",
-    body: "Practical help for daily living.",
-    image: "/service-everyday.webp",
-    alt: "Mug and blanket on a sofa",
-  },
-  {
-    title: "Special Projects",
-    body: "Personalized support for the things that don’t fit neatly on a to-do list.",
-    image: "/service-special.webp",
-    alt: "Checklist notebook on a desk",
-  },
-] as const;
+import { helpServices, personYouCanCall, site } from "@/lib/site";
 
 const steps = [
   {
@@ -89,7 +56,7 @@ export default function HomePage() {
                 Let’s talk →
               </a>
               <a
-                href="/rates"
+                href="/help"
                 className="inline-flex h-12 items-center justify-center rounded-full border border-border bg-background px-6 text-base font-semibold text-foreground"
               >
                 How I can help →
@@ -120,14 +87,11 @@ export default function HomePage() {
 
       <section id="services" className="section-center bg-sage">
         <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6 sm:py-16">
-          <p className="text-center text-sm font-semibold tracking-[0.18em] text-primary uppercase">
-            How I can help
-          </p>
-          <h2 className="mt-2 text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
+          <h2 className="text-center font-heading text-3xl font-semibold text-ink sm:text-4xl">
             Practical support for real life
           </h2>
           <ul className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-5 lg:gap-5">
-            {services.map((item) => (
+            {helpServices.map((item) => (
               <li key={item.title} className="text-center">
                 <div className="relative aspect-[16/10] w-full overflow-hidden rounded-2xl">
                   <Image
