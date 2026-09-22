@@ -8,7 +8,6 @@ import {
   Users,
 } from "lucide-react";
 
-import { BrandMark } from "@/components/brand-mark";
 import { LeafMotif } from "@/components/leaf-motif";
 import { helpServices, site } from "@/lib/site";
 
@@ -44,19 +43,11 @@ export default function HelpPage() {
     <main id="main" className="relative flex-1 overflow-hidden bg-background">
       <LeafMotif className="pointer-events-none absolute -bottom-20 -left-12 w-64 text-sage-leaf sm:w-80" />
       <article className="relative mx-auto max-w-7xl px-4 py-10 sm:px-6 sm:py-14">
-        <header className="grid items-start gap-6 sm:grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)]">
-          <a href="/" className="flex items-center gap-3 text-primary">
-            <BrandMark className="h-16 w-auto object-contain sm:h-20" />
-            <span className="min-w-0">
-              <span className="block font-heading text-sm font-semibold tracking-wide uppercase">
-                {site.shortName}
-              </span>
-              <span className="mt-1 block text-[0.65rem] tracking-[0.12em] text-muted-foreground uppercase">
-                {site.tagline}
-              </span>
-            </span>
-          </a>
-          <div className="text-center">
+        <header className="relative">
+          <p className="absolute top-0 right-0 hidden max-w-[11rem] text-right font-heading text-base leading-snug text-ink sm:block">
+            You don’t have to do it all alone.
+          </p>
+          <div className="mx-auto max-w-3xl text-center">
             <div className="flex items-center gap-3">
               <span className="h-px flex-1 bg-primary/40" aria-hidden />
               <h1 className="font-heading text-2xl font-semibold tracking-[0.08em] text-ink uppercase sm:text-3xl">
@@ -70,10 +61,10 @@ export default function HelpPage() {
             <p className="mt-2 text-base text-muted-foreground sm:text-lg">
               Thoughtful help for today, and a more organized tomorrow.
             </p>
+            <p className="mt-4 font-heading text-base leading-snug text-ink sm:hidden">
+              You don’t have to do it all alone.
+            </p>
           </div>
-          <p className="text-center font-heading text-base leading-snug text-ink sm:text-right">
-            You don’t have to do it all alone.
-          </p>
         </header>
 
         <ul className="mt-12 grid gap-10 sm:grid-cols-2 xl:grid-cols-5 xl:gap-6">
