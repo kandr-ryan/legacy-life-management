@@ -16,10 +16,87 @@ export const navLinks = [
   { href: "/#top", label: "Home" },
   { href: "/about", label: "About Bobbie" },
   { href: "/faq", label: "Frequently Asked Questions" },
+  { href: "/help", label: "How I can help" },
   { href: "/rates", label: "Rates and fees" },
   { href: "/#services", label: "Services" },
   { href: "/#how-it-works", label: "How It Works" },
   { href: "/#contact", label: "Contact" },
+] as const;
+
+export const helpServices = [
+  {
+    title: "Appointments & health-related organization",
+    body: "Be informed. Feel supported.",
+    image: "/service-appointments.webp",
+    alt: "Stethoscope on a clipboard",
+    icon: "calendar",
+    items: [
+      "Schedule and manage appointments",
+      "Prepare for visits with questions and information",
+      "Provide reminders and follow-up",
+      "Coordinate with healthcare providers (with your permission)",
+      "Help organize medical information",
+    ],
+  },
+  {
+    title: "Moves & transitions",
+    body: "Helping life’s changes feel more manageable.",
+    image: "/service-moves.webp",
+    alt: "Moving boxes labeled Next Chapter",
+    icon: "home",
+    items: [
+      "Plan and coordinate moves (senior living, downsizing, or rightsizing)",
+      "Sort, organize, and declutter",
+      "Coordinate with family, vendors, and facilities",
+      "Create practical timelines and checklists",
+      "Support you through each step with care and understanding",
+    ],
+  },
+  {
+    title: "Funeral & family project support",
+    body: "Compassionate help when it matters most.",
+    image: "/service-funeral.webp",
+    alt: "White lily on a dark surface",
+    icon: "heart",
+    items: [
+      "Help organize important information and documentation",
+      "Coordinate tasks and timelines",
+      "Communicate with funeral homes, clergy, or other providers",
+      "Support family members during a difficult time",
+      "Assist with follow-up tasks and details",
+    ],
+  },
+  {
+    title: "Everyday life assistance",
+    body: "Practical help for daily living.",
+    image: "/service-everyday.webp",
+    alt: "Mug and blanket on a sofa",
+    icon: "people",
+    items: [
+      "Errands and shopping",
+      "Home organization",
+      "Paperwork and correspondence",
+      "Phone calls and communication",
+      "Calendar and task management",
+      "Technology support",
+      "Companionship and an extra set of hands",
+    ],
+  },
+  {
+    title: "Special Projects",
+    body: "Personalized support for the things that don’t fit neatly on a to-do list.",
+    image: "/service-special.webp",
+    alt: "Checklist notebook on a desk",
+    icon: "clipboard",
+    items: [
+      "Estate and household organization",
+      "Life documentation projects",
+      "Seasonal projects (holidays, travel, etc.)",
+      "Coordinate with trusted professionals (attorneys, financial advisors, etc.)",
+      "Custom support tailored to your unique needs",
+      "Transportation to out-of-town events",
+    ],
+  },
 ] as const;
 
 export const ratesSheet = {
