@@ -101,16 +101,8 @@ export const helpServices = [
 
 export const ratesSheet = {
   eyebrow: "You don’t have to do it all alone.",
-  title: "Service & Rate Information",
+  title: "Service Information",
   subtitle: "Practical support for a more organized, less stressful tomorrow",
-  hourly: {
-    heading: "Hourly rate",
-    items: [
-      "$20 per hour",
-      "Applies to local services within the immediate Evansville area only.",
-      "Time is billed in 1-hour increments.",
-    ],
-  },
   largerProjects: {
     heading: "Larger or out-of-town projects",
     items: [

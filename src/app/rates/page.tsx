@@ -6,7 +6,7 @@ import { ratesSheet, site } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Rates and fees",
-  description: `${site.shortName} service and rate information: $20 per hour in the Evansville area, billed in 1-hour increments. Personal support — not medical, legal, or financial advice.`,
+  description: `${site.shortName} service information: larger and out-of-town projects quoted case by case, with clear details before work begins. Personal support — not medical, legal, or financial advice.`,
 };
 
 function RateList({ items }: { items: readonly string[] }) {
@@ -53,12 +53,6 @@ export default function RatesPage() {
 
         <div className="mt-12 grid gap-12 md:grid-cols-2 md:gap-16">
           <div className="space-y-10">
-            <section>
-              <h2 className="font-heading text-xl font-semibold tracking-wide text-ink uppercase">
-                {ratesSheet.hourly.heading}
-              </h2>
-              <RateList items={ratesSheet.hourly.items} />
-            </section>
             <section>
               <h2 className="font-heading text-xl font-semibold tracking-wide text-ink uppercase">
                 {ratesSheet.largerProjects.heading}
