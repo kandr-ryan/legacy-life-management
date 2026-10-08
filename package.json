@@ -6,7 +6,9 @@
     "dev": "next dev --port 43147 --hostname 127.0.0.1",
     "build": "next build",
     "start": "next start --port 43147 --hostname 127.0.0.1",
-    "lint": "eslint"
+    "lint": "eslint",
+    "generate:og": "python3 scripts/generate-og-image.py",
+    "prebuild": "python3 scripts/generate-og-image.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
