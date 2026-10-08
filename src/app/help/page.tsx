@@ -9,12 +9,14 @@ import {
 } from "lucide-react";
 
 import { LeafMotif } from "@/components/leaf-motif";
+import { pageMetadata } from "@/lib/seo";
 import { helpServices, site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "How I can help",
-  description: `Practical support for real life from ${site.shortName}: appointments, moves, funeral and family projects, everyday help, and special projects.`,
-};
+  description: `Practical support for real life from ${site.owner} at ${site.shortName}: appointments and health-related organization, moves and transitions, funeral and family projects, everyday help, and special projects in ${site.region}.`,
+  path: "/help",
+});
 
 type HelpIcon = (typeof helpServices)[number]["icon"];
 

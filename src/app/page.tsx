@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import { ArrowDown, ArrowRight } from "lucide-react";
 
@@ -11,7 +12,15 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { pageMetadata } from "@/lib/seo";
 import { helpServices, personYouCanCall, site } from "@/lib/site";
+
+export const metadata: Metadata = pageMetadata({
+  title: `${site.legalName} — ${site.tagline}`,
+  description: site.defaultDescription,
+  path: "/",
+  absoluteTitle: true,
+});
 
 const steps = [
   {

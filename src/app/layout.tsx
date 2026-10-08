@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Source_Sans_3, Source_Serif_4 } from "next/font/google";
 
+import { JsonLd } from "@/components/json-ld";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
+import { localBusinessJsonLd, ogImageUrl, pageMetadata } from "@/lib/seo";
 import { site } from "@/lib/site";
 
 import "./globals.css";
@@ -23,14 +25,37 @@ const sourceSerif = Source_Serif_4({
   adjustFontFallback: true,
 });
 
+const homeTitle = `${site.legalName} — ${site.tagline}`;
+
 export const metadata: Metadata = {
   metadataBase: new URL(site.siteUrl),
+  ...pageMetadata({
+    title: homeTitle,
+    description: site.defaultDescription,
+    path: "/",
+    absoluteTitle: true,
+  }),
   title: {
-    default: `${site.legalName} — ${site.tagline}`,
+    default: homeTitle,
     template: `%s — ${site.shortName}`,
   },
-  description:
-    "Personal, practical support for older adults and families: appointments, senior-living moves, funeral-related coordination, special projects, and everyday logistics. Not a medical or home-health service. Bobbie Libbey, owner.",
+  applicationName: site.shortName,
+  authors: [{ name: site.owner, url: `${site.siteUrl}/about` }],
+  creator: site.owner,
+  publisher: site.legalName,
+  keywords: [
+    "Legacy Life Management",
+    "Bobbie Libbey",
+    "Southern Indiana",
+    "senior support",
+    "older adults",
+    "appointment companion",
+    "senior living moves",
+    "funeral coordination",
+    "everyday assistance",
+    "non-medical support",
+  ],
+  category: "Personal services",
   icons: {
     icon: [
       { url: "/favicon-tree-20260921.ico", type: "image/x-icon" },
@@ -49,15 +74,15 @@ export const metadata: Metadata = {
     apple: [{ url: "/apple-touch-icon-20260921.png", sizes: "180x180" }],
   },
   openGraph: {
-    title: site.shortName,
-    description: site.tagline,
+    title: homeTitle,
+    description: site.defaultDescription,
     url: site.siteUrl,
     siteName: site.shortName,
     type: "website",
     locale: "en_US",
     images: [
       {
-        url: `${site.siteUrl}/og-image.jpg`,
+        url: ogImageUrl(),
         width: 1200,
         height: 630,
         alt: `${site.shortName} — ${site.tagline}`,
@@ -66,9 +91,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: site.shortName,
-    description: site.tagline,
-    images: [`${site.siteUrl}/og-image.jpg`],
+    title: homeTitle,
+    description: site.defaultDescription,
+    images: [ogImageUrl()],
   },
 };
 
@@ -79,6 +104,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${sourceSans.variable} ${sourceSerif.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col">
+        <JsonLd data={localBusinessJsonLd()} />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:absolute focus:top-3 focus:left-3 focus:z-50 focus:rounded-lg focus:bg-primary focus:px-4 focus:py-3 focus:text-primary-foreground"

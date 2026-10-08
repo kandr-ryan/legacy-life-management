@@ -26,9 +26,12 @@ The contact form validates in the browser and logs the request. It does not send
 
 ## Live
 
-- Site: https://legacy-life-management.web.app
+- Site: https://legacylifemanagementllc.com
+- Backup: https://legacy-life-management.web.app
 - GitHub: https://github.com/kandr-ryan/legacy-life-management
 - Firebase project: `legacy-life-management`
+
+SEO: per-page metadata, `robots.txt`, `sitemap.xml`, and LocalBusiness/Person JSON-LD use the custom domain as the canonical origin (`src/lib/site.ts` → `siteUrl`).
 
 Deploy static Hosting after a production build:
 
@@ -36,6 +39,8 @@ Deploy static Hosting after a production build:
 npm run build
 npx firebase-tools deploy --only hosting --project legacy-life-management
 ```
+
+Requires Firebase CLI auth (`firebase login` or `FIREBASE_TOKEN`).
 
 No authentication and no database. Copy `.env.example` to `.env.local` only if you add Firebase client keys later.
 

@@ -6,11 +6,27 @@ export const site = {
   tagline: "Support Today. Brighter Tomorrows.",
   phoneDisplay: "812-598-5423",
   phoneHref: "tel:8125985423",
+  /** E.164 for schema.org telephone */
+  phoneE164: "+18125985423",
   email: "legacylifemanagementllc@gmail.com",
   emailHref: "mailto:legacylifemanagementllc@gmail.com",
   region: "Southern Indiana",
-  siteUrl: "https://legacy-life-management.web.app",
+  /** Canonical production origin (custom domain). */
+  siteUrl: "https://legacylifemanagementllc.com",
+  /** Firebase Hosting fallback URL (same deploy). */
+  backupUrl: "https://legacy-life-management.web.app",
+  ogImagePath: "/og-image.jpg",
+  defaultDescription:
+    "Personal, practical support for older adults and families in Southern Indiana: appointments, senior-living moves, funeral-related coordination, special projects, and everyday logistics. Not a medical or home-health service. Bobbie Libbey, owner of Legacy Life Management, LLC.",
 } as const;
+
+export const siteRoutes = [
+  { path: "/", changeFrequency: "monthly", priority: 1 },
+  { path: "/about", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/help", changeFrequency: "monthly", priority: 0.9 },
+  { path: "/faq", changeFrequency: "monthly", priority: 0.8 },
+  { path: "/rates", changeFrequency: "monthly", priority: 0.8 },
+] as const;
 
 export const navLinks = [
   { href: "/#top", label: "Home" },
