@@ -8,7 +8,8 @@
     "start": "next start --port 43147 --hostname 127.0.0.1",
     "lint": "eslint",
     "generate:og": "python3 scripts/generate-og-image.py",
-    "prebuild": "python3 scripts/generate-og-image.py"
+    "decode:og": "python3 scripts/decode-og-image.py",
+    "prebuild": "python3 scripts/decode-og-image.py || python3 scripts/generate-og-image.py"
   },
   "dependencies": {
     "@base-ui/react": "^1.8.0",
