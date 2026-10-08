@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
 
+import { JsonLd } from "@/components/json-ld";
 import { LeafMotif } from "@/components/leaf-motif";
+import { faqPageJsonLd, pageMetadata } from "@/lib/seo";
 import { aboutFaq, site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Frequently Asked Questions",
-  description: `Answers about what ${site.shortName} can help with, professional boundaries, and how the first conversation works.`,
-};
+  description: `Answers from ${site.owner} about what ${site.shortName} can help with in ${site.region}, professional boundaries, authorizations, and how the first conversation works.`,
+  path: "/faq",
+});
 
 export default function FaqPage() {
   return (
     <main id="main" className="relative flex-1 overflow-hidden bg-sage">
+      <JsonLd data={faqPageJsonLd()} />
       <LeafMotif className="pointer-events-none absolute -bottom-16 -left-10 w-64 text-sage-leaf sm:w-80" />
       <section className="relative mx-auto max-w-3xl px-4 py-14 sm:px-6 sm:py-16">
         <p className="text-sm font-semibold tracking-[0.18em] text-primary uppercase">

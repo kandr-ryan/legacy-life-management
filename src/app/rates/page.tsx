@@ -2,12 +2,14 @@ import type { Metadata } from "next";
 
 import { BrandMark } from "@/components/brand-mark";
 import { LeafMotif } from "@/components/leaf-motif";
+import { pageMetadata } from "@/lib/seo";
 import { ratesSheet, site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "Rates and fees",
-  description: `${site.shortName} service information: larger and out-of-town projects quoted case by case, with clear details before work begins. Personal support — not medical, legal, or financial advice.`,
-};
+  description: `${site.shortName} service information from ${site.owner}: larger and out-of-town projects quoted case by case, clear details before work begins. Personal support in ${site.region} — not medical, legal, or financial advice.`,
+  path: "/rates",
+});
 
 function RateList({ items }: { items: readonly string[] }) {
   return (

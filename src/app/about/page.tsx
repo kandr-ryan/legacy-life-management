@@ -3,13 +3,15 @@ import { Mail, MapPin, Phone } from "lucide-react";
 
 import { BobbiePortrait } from "@/components/bobbie-portrait";
 import { LeafMotif } from "@/components/leaf-motif";
+import { pageMetadata } from "@/lib/seo";
 import { aboutStory, site } from "@/lib/site";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = pageMetadata({
   title: "About Bobbie",
   description:
-    "Meet Bobbie Libbey, owner of Legacy Life Management, LLC. Personal, practical support for older adults and families in Southern Indiana — not medical or home health.",
-};
+    "Meet Bobbie Libbey, owner of Legacy Life Management, LLC. Personal, practical support for older adults and families in Southern Indiana — appointments, moves, projects, and everyday logistics. Not medical or home health.",
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
