@@ -4,6 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev --port 43147 --hostname 127.0.0.1",
+    "decode:og": "python3 scripts/decode-og-image.py",
+    "sync:og": "python3 scripts/sync-og-from-live.py",
+    "prebuild": "npm run decode:og || npm run sync:og || true",
     "build": "next build",
     "start": "next start --port 43147 --hostname 127.0.0.1",
     "lint": "eslint"

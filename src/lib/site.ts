@@ -9,7 +9,10 @@ export const site = {
   email: "legacylifemanagementllc@gmail.com",
   emailHref: "mailto:legacylifemanagementllc@gmail.com",
   region: "Southern Indiana",
-  siteUrl: "https://legacy-life-management.web.app",
+  /** Canonical production origin (custom domain). */
+  siteUrl: "https://legacylifemanagementllc.com",
+  /** Firebase Hosting fallback (same deploy). */
+  backupUrl: "https://legacy-life-management.web.app",
 } as const;
 
 export const navLinks = [
